@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-amplifyae37810d4ad74-staging-94048-authRole",
+      "UnauthRoleArn": "arn:aws:iam::553464491484:role/amplify-amplifyae37810d4ad74-staging-94048-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::553464491484:role/amplify-amplifyae37810d4ad74-staging-94048-authRole",
+      "Region": "eu-west-2",
+      "DeploymentBucketName": "amplify-amplifyae37810d4ad74-staging-94048-deployment",
+      "UnauthRoleName": "amplify-amplifyae37810d4ad74-staging-94048-unauthRole",
+      "StackName": "amplify-amplifyae37810d4ad74-staging-94048",
+      "StackId": "arn:aws:cloudformation:eu-west-2:553464491484:stack/amplify-amplifyae37810d4ad74-staging-94048/899baa10-0f4e-11ee-869f-0af9653417d6",
+      "AmplifyAppId": "d20x32fxvl3ee7"
+    },
+    "categories": {
+      "auth": {
+        "padellabtoursapp51ecf940": {}
+      }
+    }
+  }
+}
