@@ -17,6 +17,9 @@
       },
       "api": {
         "padellabtoursapp": {}
+      },
+      "storage": {
+        "imagestorage": {}
       }
     }
   }
