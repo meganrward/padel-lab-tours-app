@@ -1,12 +1,15 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { View, Link } from "@aws-amplify/ui-react";
 
 export default function AboutPage() {
     return (
         <>
-            <Container>
-upcoming tours
-            </Container>
+            <View>
+            upcoming tours
+            <Link color="black" href="/booking">
+              BOOK THIS TOUR
+            </Link>
+            </View>
 
         </>
     )
