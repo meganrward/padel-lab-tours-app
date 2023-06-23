@@ -1,12 +1,12 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { View, Link } from "@aws-amplify/ui-react";
 
 export default function AboutPage() {
     return (
         <>
-            <Container>
+            <View>
 Gallery page
-            </Container>
+            </View>
 
         </>
     )

@@ -23,6 +23,7 @@ import GalleryPage from "./pages/GalleryPage.js"
 import UpcomingToursPage from "./pages/UpcomingToursPage.js"
 import AboutPage from "./pages/AboutPage.js"
 import HomePage from "./pages/HomePage.js"
+import BookingPage from "./pages/BookingPage.js"
 import RegisterYourInterestPage from "./pages/RegisterYourInterestPage.js"
 const App = () => {
   return (
@@ -32,20 +33,20 @@ const App = () => {
         <Heading level="1">PADEL LAB TOURS</Heading>
           <Flex>
           {' '}
-            <Link href="/">
-              <Button>HOME</Button>
+            <Link color="black" href="/">
+              HOME
             </Link>
-            <Link href="/about">
-              <Button>ABOUT</Button>
+            <Link color="black" href="/about">
+              ABOUT
             </Link>
-            <Link href="/upcoming-tours">
-              <Button>TOURS</Button>
+            <Link color="black" href="/upcoming-tours">
+              TOURS
             </Link>
-            <Link href="/gallery">
-              <Button>GALLERY</Button>
+            <Link color="black" href="/gallery">
+              GALLERY
             </Link>
-            <Link href="/register">
-              <Button>REGISTER YOUR INTEREST</Button>
+            <Link color="black" href="/register">
+              REGISTER YOUR INTEREST
             </Link>
           </Flex>
       </Flex>
@@ -57,6 +58,7 @@ const App = () => {
             <Route path="/upcoming-tours" element={<UpcomingToursPage/>}></Route>
             <Route path="/gallery" element={<GalleryPage/>}></Route>
             <Route path="/register" element={<RegisterYourInterestPage/>}></Route>
+            <Route path="/booking" element={<BookingPage/>}></Route>
           </Routes>
         </BrowserRouter>
       </>
