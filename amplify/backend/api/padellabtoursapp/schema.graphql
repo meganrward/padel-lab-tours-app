@@ -4,6 +4,7 @@ type Booking @model @auth(rules: [{allow: public}]) {
   last_name: String
   has_paid: Boolean
   customerID: ID! @index(name: "byCustomer")
+  tour_id: String
 }
 
 type Customer @model @auth(rules: [{allow: public}]) {
@@ -13,5 +14,6 @@ type Customer @model @auth(rules: [{allow: public}]) {
   email: AWSEmail
   mobile_number: AWSPhone
   Bookings: [Booking] @hasMany(indexName: "byCustomer", fields: ["id"])
+  subscribed_to_marketing: Boolean
 }
  
