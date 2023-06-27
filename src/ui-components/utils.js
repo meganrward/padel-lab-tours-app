@@ -284,17 +284,17 @@ export function formatter(value, formatterInput) {
       return value;
   }
 }
-export const fetchByPath = (input, path = "", accumlator = []) => {
+export const fetchByPath = (input, path = "", accumulator = []) => {
   const currentPath = path.split(".");
   const head = currentPath.shift();
   if (input && head && input[head] !== undefined) {
     if (!currentPath.length) {
-      accumlator.push(input[head]);
+      accumulator.push(input[head]);
     } else {
-      fetchByPath(input[head], currentPath.join("."), accumlator);
+      fetchByPath(input[head], currentPath.join("."), accumulator);
     }
   }
-  return accumlator[0];
+  return accumulator[0];
 };
 export const processFile = async ({ file }) => {
   const fileExtension = file.name.split(".").pop();

@@ -1,48 +1,153 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createNote = /* GraphQL */ `
-  mutation CreateNote(
-    $input: CreateNoteInput!
-    $condition: ModelNoteConditionInput
+export const createBooking = /* GraphQL */ `
+  mutation CreateBooking(
+    $input: CreateBookingInput!
+    $condition: ModelBookingConditionInput
   ) {
-    createNote(input: $input, condition: $condition) {
+    createBooking(input: $input, condition: $condition) {
       id
-      name
-      description
-      image
+      first_name
+      last_name
+      has_paid
+      customerID
+      tour_id
       createdAt
       updatedAt
       __typename
     }
   }
 `;
-export const updateNote = /* GraphQL */ `
-  mutation UpdateNote(
-    $input: UpdateNoteInput!
-    $condition: ModelNoteConditionInput
+export const updateBooking = /* GraphQL */ `
+  mutation UpdateBooking(
+    $input: UpdateBookingInput!
+    $condition: ModelBookingConditionInput
   ) {
-    updateNote(input: $input, condition: $condition) {
+    updateBooking(input: $input, condition: $condition) {
       id
-      name
-      description
-      image
+      first_name
+      last_name
+      has_paid
+      customerID
+      tour_id
       createdAt
       updatedAt
       __typename
     }
   }
 `;
-export const deleteNote = /* GraphQL */ `
-  mutation DeleteNote(
-    $input: DeleteNoteInput!
-    $condition: ModelNoteConditionInput
+export const deleteBooking = /* GraphQL */ `
+  mutation DeleteBooking(
+    $input: DeleteBookingInput!
+    $condition: ModelBookingConditionInput
   ) {
-    deleteNote(input: $input, condition: $condition) {
+    deleteBooking(input: $input, condition: $condition) {
       id
-      name
-      description
-      image
+      first_name
+      last_name
+      has_paid
+      customerID
+      tour_id
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const createCustomer = /* GraphQL */ `
+  mutation CreateCustomer(
+    $input: CreateCustomerInput!
+    $condition: ModelCustomerConditionInput
+  ) {
+    createCustomer(input: $input, condition: $condition) {
+      id
+      first_name
+      last_name
+      email
+      mobile_number
+      Bookings {
+        items {
+          id
+          first_name
+          last_name
+          has_paid
+          customerID
+          tour_id
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      subscribed_to_marketing
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const updateCustomer = /* GraphQL */ `
+  mutation UpdateCustomer(
+    $input: UpdateCustomerInput!
+    $condition: ModelCustomerConditionInput
+  ) {
+    updateCustomer(input: $input, condition: $condition) {
+      id
+      first_name
+      last_name
+      email
+      mobile_number
+      Bookings {
+        items {
+          id
+          first_name
+          last_name
+          has_paid
+          customerID
+          tour_id
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      subscribed_to_marketing
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const deleteCustomer = /* GraphQL */ `
+  mutation DeleteCustomer(
+    $input: DeleteCustomerInput!
+    $condition: ModelCustomerConditionInput
+  ) {
+    deleteCustomer(input: $input, condition: $condition) {
+      id
+      first_name
+      last_name
+      email
+      mobile_number
+      Bookings {
+        items {
+          id
+          first_name
+          last_name
+          has_paid
+          customerID
+          tour_id
+          createdAt
+          updatedAt
+          __typename
+        }
+        nextToken
+        __typename
+      }
+      subscribed_to_marketing
       createdAt
       updatedAt
       __typename

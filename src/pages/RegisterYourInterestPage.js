@@ -11,40 +11,42 @@ import {
     View,
     CheckboxField,
   } from '@aws-amplify/ui-react';
-
-export default function AboutPage() {
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
-    const [emailAddress, setEmailAddress] = useState("");
-    const [mobileNumber, setMobileNumber] = useState("");
-    const [disabledSubmit, setDisabledSubmit] =  useState(true)  
+import { API } from "aws-amplify";
+import { createCustomer } from './../graphql/mutations';
+// import { validateField } from './../ui-components/utils.js';
+// import { formatError } from "graphql";
 
 
-    const checkFieldsValid = () => {
-        firstName && lastName && emailAddress.includes("@") ? setDisabledSubmit(false) : setDisabledSubmit(true)
-    }
+export default function RegisterYourInterestPage() {
+  console.log("register your interest page")
 
-    const handleFirstNameChange = (e) => {
-        setFirstName(e.currentTarget.value);
-        checkFieldsValid()
-    };
-    const handleLastNameChange = (e) => {
-        setLastName(e.currentTarget.value);
-        checkFieldsValid()
-    };
-    const handleEmailAddressChange = (e) => {
-        setEmailAddress(e.currentTarget.value);
-        checkFieldsValid()
-    };
-    const handleMobileNumberChange = (e) => {
-        setMobileNumber(e.currentTarget.value)
-    }
+    async function newCustomer(event) {
+      console.log("new customer")
+        event.preventDefault();
+        const form = new FormData(event.target);
+        const mobileNumber = form.get("dial_code")+form.get("number").slice(0,3) + "-" +form.get("number").slice(3,6) + "-" + form.get("number").slice(6)
+        const data = {
+          first_name: form.get("first_name"),
+          last_name: form.get("last_name"),
+          email: form.get("email"),
+          mobile_number: mobileNumber,
+        };
+        console.log(JSON.stringify(data))
+        await API.graphql({
+          query: createCustomer,
+          variables: { input: data },
+        });
+        console.log("graphql called")
+        event.target.reset();
+      }
 
     return (
-        <View padding="3%">
+        <View as="form" onSubmit={newCustomer} padding="3%">
             <Heading>Register your interest</Heading>
-            <Flex direction="column" justifyContent="left" width="30%">
-            <TextField 
+            <Flex direction="column" justifyContent="left" width="50%">
+            <TextField
+                required 
+                name="first_name"
                 placeholder="First name"
                 label={
                     <Text>
@@ -57,9 +59,10 @@ export default function AboutPage() {
                   }
                 errorMessage="There is an error"
                 isRequired
-                onChange={handleFirstNameChange}
             />
-            <TextField 
+            <TextField
+                required 
+                name="last_name"
                 placeholder="Last name"
                 label={
                     <Text>
@@ -72,9 +75,10 @@ export default function AboutPage() {
                   }
                 errorMessage="There is an error"
                 isRequired
-                onChange={handleLastNameChange}
             />
             <TextField
+                required
+                name="email"
                 placeholder="email@email.com"
                 label={
                     <Text>
@@ -87,10 +91,10 @@ export default function AboutPage() {
                   }
                 errorMessage="There is an error"
                 isRequired
-                onChange={handleEmailAddressChange}
             />
             <PhoneNumberField
                 defaultDialCode="+44"
+                dialCodeName="dial_code"
                 label={
                     <Text>
                       Mobile number
@@ -100,8 +104,8 @@ export default function AboutPage() {
                       </Text>
                     </Text>
                   }
-                placeholder="234-567-8910"
-                onChange={handleMobileNumberChange}
+                name="number"
+                  placeholder="234-567-8910"
             />
             <CheckboxField
                 label="Subscribe to marketing"
@@ -109,7 +113,7 @@ export default function AboutPage() {
                 value="yes"
             />
             </Flex>
-            <Button type="submit" disabled={disabledSubmit}>Submit</Button>
+            <Button type="submit">Submit</Button>
         </View>
     )
 }
