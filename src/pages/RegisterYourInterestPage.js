@@ -6,7 +6,7 @@ import {
     Image,
     Text,
     TextField,
-    Grid,
+    Alert,
     PhoneNumberField,
     View,
     CheckboxField,
@@ -19,6 +19,7 @@ import { createCustomer } from './../graphql/mutations';
 
 export default function RegisterYourInterestPage() {
   console.log("register your interest page")
+  const [isAlertVisible, setIsAlertVisible] = useState(false);
 
     async function newCustomer(event) {
       console.log("new customer")
@@ -37,11 +38,21 @@ export default function RegisterYourInterestPage() {
           variables: { input: data },
         });
         console.log("graphql called")
+        setIsAlertVisible(true)
         event.target.reset();
       }
 
     return (
+      
         <View as="form" onSubmit={newCustomer} padding="3%">
+          {isAlertVisible ? <Alert
+            variation="success"
+            isDismissible={false}
+            hasIcon={true}
+            heading="Registration successful"
+            >
+            A representative will be in touch
+          </Alert> : null}
             <Heading>Register your interest</Heading>
             <Flex direction="column" justifyContent="left" width="50%">
             <TextField
