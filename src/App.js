@@ -29,7 +29,7 @@ const App = () => {
   return (
     <View className="App">
       <>
-      <Flex justifyContent="space-between" padding="3%">
+      <Flex justifyContent="space-between" padding="3%" >
         <Heading level="1">PADEL LAB TOURS</Heading>
           <Flex>
           {' '}
