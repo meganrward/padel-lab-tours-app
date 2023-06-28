@@ -2,11 +2,15 @@
   "resourceName": "imagestorage",
   "policyUUID": "c583f9cf",
   "bucketName": "image-testing",
-  "storageAccess": "auth",
-  "guestAccess": [],
-  "authAccess": [
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
     "CREATE_AND_UPDATE",
     "READ",
+    "DELETE"
+  ],
+  "authAccess": [
+    "READ",
+    "CREATE_AND_UPDATE",
     "DELETE"
   ],
   "triggerFunction": "NONE",

@@ -1,13 +1,16 @@
 import React from "react";
-import { View, Link } from "@aws-amplify/ui-react";
+import { Image } from '@aws-amplify/ui-react';
+import { API, Storage } from 'aws-amplify';
+
 
 export default function AboutPage() {
-    return (
-        <>
-            <View>
-about page
-            </View>
-
-        </>
-    )
-}
+  return (
+    <>
+    <Image   height="75%"
+  width="75%"
+      src="./la-reserva.jpg"
+      alt="la reserva"
+    />
+    </>
+  );
+};
