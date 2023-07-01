@@ -48,30 +48,32 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
     <View className="App">
-      <Flex justifyContent="center" padding="3%" fontSize="20px">
-        <Image
-          src="./logo-with-name.avif"
-          alt="PADEL LAB TOURS logo"
-          height="48px"
-        />
+      <Flex justifyContent="center" padding="3%" fontSize="20px" alignContent="center" paddingRight="100px">        
+        <Link href="/">
+          <Image
+            src="./logo-with-name.png"
+            alt="PADEL LAB TOURS logo"
+            height="76px"
+          />
+        </Link>
         {' '}
         <Link href="/">
-          <Text>HOME</Text>
+          <Text paddingTop="26px">HOME</Text>
         </Link>
         <Link href="/about">
-          <Text>ABOUT</Text>
+          <Text paddingTop="26px">ABOUT</Text>
         </Link>
         <Link href="/upcoming-tours">
-          <Text>TOURS</Text>
+          <Text paddingTop="26px">TOURS</Text>
         </Link>
         <Link href="/register">
-          <Text>REGISTER YOUR INTEREST</Text>
+          <Text paddingTop="26px">REGISTER YOUR INTEREST</Text>
         </Link>
         <Link href="/faq">
-          <Text>FAQ</Text>
+          <Text paddingTop="26px">FAQ</Text>
         </Link>
         <Link href="/contact">
-          <Text>CONTACT US</Text>
+          <Text paddingTop="26px">CONTACT US</Text>
         </Link>
       </Flex>
         <BrowserRouter>
