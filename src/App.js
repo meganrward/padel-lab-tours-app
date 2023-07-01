@@ -1,54 +1,78 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./App.css";
 import "@aws-amplify/ui-react/styles.css";
-import { API, Storage } from 'aws-amplify';
 import {
-  Button,
   Flex,
-  Heading,
   Image,
   Text,
-  TextField,
-  Grid,
   View,
   Link,
 } from '@aws-amplify/ui-react';
-import { listNotes } from "./graphql/queries";
-import {
-  createNote as createNoteMutation,
-  deleteNote as deleteNoteMutation,
-} from "./graphql/mutations";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import GalleryPage from "./pages/GalleryPage.js"
 import UpcomingToursPage from "./pages/UpcomingToursPage.js"
 import AboutPage from "./pages/AboutPage.js"
 import HomePage from "./pages/HomePage.js"
 import BookingPage from "./pages/BookingPage.js"
+import FaqPage from "./pages/FaqPage.js"
+import ContactPage from "./pages/ContactPage.js"
 import RegisterYourInterestPage from "./pages/RegisterYourInterestPage.js"
+import { ThemeProvider } from '@aws-amplify/ui-react';
+
+
+const theme = {
+  name: 'custom-theme',
+  tokens: {
+    components: {
+      card: {
+        backgroundColor: { value: '{colors.background.secondary}' },
+        outlined: {
+          borderColor: { value: '{colors.black}' },
+        },
+      },
+      heading: {
+        color: { value: "black" },
+      },
+      link: {
+        color: { value: 'black' },
+      },
+      text: {
+        color: {value: "black"},
+        
+      }
+    },
+  },
+};
+
+
 const App = () => {
   return (
+    <ThemeProvider theme={theme}>
     <View className="App">
-      <>
-      <Flex justifyContent="space-between" padding="3%" >
-        <Heading level="1">PADEL LAB TOURS</Heading>
-          <Flex>
-          {' '}
-            <Link color="black" href="/">
-              HOME
-            </Link>
-            <Link color="black" href="/about">
-              ABOUT
-            </Link>
-            <Link color="black" href="/upcoming-tours">
-              TOURS
-            </Link>
-            <Link color="black" href="/gallery">
-              GALLERY
-            </Link>
-            <Link color="black" href="/register">
-              REGISTER YOUR INTEREST
-            </Link>
-          </Flex>
+      <Flex justifyContent="center" padding="3%" fontSize="20px">
+        <Image
+          src="./logo-with-name.avif"
+          alt="PADEL LAB TOURS logo"
+          height="48px"
+        />
+        {' '}
+        <Link href="/">
+          <Text>HOME</Text>
+        </Link>
+        <Link href="/about">
+          <Text>ABOUT</Text>
+        </Link>
+        <Link href="/upcoming-tours">
+          <Text>TOURS</Text>
+        </Link>
+        <Link href="/register">
+          <Text>REGISTER YOUR INTEREST</Text>
+        </Link>
+        <Link href="/faq">
+          <Text>FAQ</Text>
+        </Link>
+        <Link href="/contact">
+          <Text>CONTACT US</Text>
+        </Link>
       </Flex>
         <BrowserRouter>
           {' '}
@@ -56,13 +80,14 @@ const App = () => {
             <Route path="/" element={<HomePage/>}></Route>
             <Route path="/about" element={<AboutPage/>}></Route>
             <Route path="/upcoming-tours" element={<UpcomingToursPage/>}></Route>
-            <Route path="/gallery" element={<GalleryPage/>}></Route>
             <Route path="/register" element={<RegisterYourInterestPage/>}></Route>
             <Route path="/booking" element={<BookingPage/>}></Route>
+            <Route path="/faq" element={<FaqPage/>}></Route>
+            <Route path="/contact" element={<ContactPage/>}></Route>
           </Routes>
         </BrowserRouter>
-      </>
     </View>
+    </ThemeProvider>
   );
 };
 
