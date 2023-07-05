@@ -1,3 +1,8 @@
+type Referrer @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  Referred: [Customer] @hasMany(indexName: "byReferrer", fields: ["id"])
+}
+
 type Booking @model @auth(rules: [{allow: public}]) {
   id: ID!
   first_name: String
@@ -15,5 +20,7 @@ type Customer @model @auth(rules: [{allow: public}]) {
   mobile_number: AWSPhone
   Bookings: [Booking] @hasMany(indexName: "byCustomer", fields: ["id"])
   subscribed_to_marketing: Boolean
+  Rating: Float
+  referrerID: ID! @index(name: "byReferrer")
 }
  
