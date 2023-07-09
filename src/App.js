@@ -16,6 +16,8 @@ import BookingPage from "./pages/BookingPage.js"
 import FaqPage from "./pages/FaqPage.js"
 import ContactPage from "./pages/ContactPage.js"
 import RegisterYourInterestPage from "./pages/RegisterYourInterestPage.js"
+import LocationsPage from "./pages/LocationsPage.js"
+import MeetTheTeamPage from "./pages/MeetTheTeamPage.js"
 import { ThemeProvider } from '@aws-amplify/ui-react';
 
 
@@ -63,8 +65,11 @@ const App = () => {
         <Link href="/about">
           <Text paddingTop="26px">ABOUT</Text>
         </Link>
-        <Link href="/upcoming-tours">
-          <Text paddingTop="26px">TOURS</Text>
+        <Link href="/locations">
+          <Text paddingTop="26px">LOCATIONS</Text>
+        </Link>
+        <Link href="/meet-the-team">
+          <Text paddingTop="26px">MEET THE TEAM</Text>
         </Link>
         <Link href="/register">
           <Text paddingTop="26px">REGISTER YOUR INTEREST</Text>
@@ -75,13 +80,17 @@ const App = () => {
         <Link href="/contact">
           <Text paddingTop="26px">CONTACT US</Text>
         </Link>
+        <Link href="https://www.padellab.co.uk" isExternal={true}>
+          <Text paddingTop="26px">SHOP</Text>
+        </Link>
       </Flex>
         <BrowserRouter>
           {' '}
           <Routes>
             <Route path="/" element={<HomePage/>}></Route>
             <Route path="/about" element={<AboutPage/>}></Route>
-            <Route path="/upcoming-tours" element={<UpcomingToursPage/>}></Route>
+            <Route path="/locations" element={<LocationsPage/>}></Route>
+            <Route path="/meet-the-team" element={<MeetTheTeamPage/>}></Route>
             <Route path="/register" element={<RegisterYourInterestPage/>}></Route>
             <Route path="/booking" element={<BookingPage/>}></Route>
             <Route path="/faq" element={<FaqPage/>}></Route>

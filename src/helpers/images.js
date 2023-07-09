@@ -1,4 +1,10 @@
 const IMAGES = [
+    "./images/1C2A3408.jpg",
+    "./images/1C2A3702.jpg",
+    "./images/1C2A3693.jpg",
+    "./images/la reserva 1.jpeg",
+    "./images/la reserva 2.jpeg",
+    "./images/DJI_0087.JPG",
     "./images/1C2A3726.jpg",
     "./images/1C2A3394.jpg",
     "./images/1C2A3401.jpg",
