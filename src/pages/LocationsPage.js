@@ -1,11 +1,9 @@
 import React from "react";
 import { Image, Flex, Text, Heading, Card, View, Link, Tabs, TabItem } from '@aws-amplify/ui-react';
 import IMAGES from "./../helpers/images.js"
-import { useSnapCarousel } from 'react-snap-carousel';
 
 
 export default function LocationsPage() {
-    const { scrollRef } = useSnapCarousel();
   return (
     <>
      <View
