@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
     Button,
     Flex,
     Heading,
-    Image,
     Text,
     TextField,
     Alert,
@@ -13,8 +12,6 @@ import {
   } from '@aws-amplify/ui-react';
 import { API } from "aws-amplify";
 import { createCustomer } from './../graphql/mutations';
-// import { validateField } from './../ui-components/utils.js';
-// import { formatError } from "graphql";
 
 
 export default function RegisterYourInterestPage() {
@@ -25,13 +22,14 @@ export default function RegisterYourInterestPage() {
       console.log("new customer")
         event.preventDefault();
         const form = new FormData(event.target);
-        const mobileNumber = form.get("dial_code")+form.get("number").slice(0,3) + "-" +form.get("number").slice(3,6) + "-" + form.get("number").slice(6)
         const data = {
           first_name: form.get("first_name"),
           last_name: form.get("last_name"),
           email: form.get("email"),
-          mobile_number: mobileNumber,
         };
+        console.log(JSON.stringify(data))
+        const mobileNumber = form.get("dial_code")+form.get("number").slice(0,3) + "-" +form.get("number").slice(3,6) + "-" + form.get("number").slice(6)
+        mobileNumber.length === 15 ?  data.mobile_number = mobileNumber :
         console.log(JSON.stringify(data))
         await API.graphql({
           query: createCustomer,
