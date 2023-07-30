@@ -10,21 +10,13 @@ export default function HomePage() {
     return (
         <>
         <View direction="column" gap="2rem" height="100%">
-         <Swiper navigation={true} pagination={true} modules={[Pagination, Navigation, Autoplay]} className="mySwiper" autoplay={{ delay: 2500, disableOnInteraction: false }}>
-                <SwiperSlide>
-                    {/* <View 
-                        style= {{backgroundImage: "url(./la-reserva-3.jpg)"}} 
-                        objectFit="scale-down"
-                        height="100%"
-                        width="100%"
-                    >
-                        <View height="100%">hi</View>
-                    </View> */}
+         <Swiper navigation={true} pagination={true} modules={[Pagination, Navigation, Autoplay]} className="mySwiper" autoplay={{ delay: 5000, disableOnInteraction: false }}>
+                <SwiperSlide width="80%">
                     <Image
                         src="./la-reserva-3.jpg"
                         alt="la reserva"
                         objectFit="cover"
-                        height="50%"
+                        height="600px"
                         width="100%"
                     />
                     </SwiperSlide>
@@ -33,7 +25,7 @@ export default function HomePage() {
                         src={IMAGES[0]}
                         alt="la reserva"
                         objectFit="cover"
-                        height="50%"
+                        height="600px"
                         width="100%"
                     />
                 </SwiperSlide>
@@ -42,7 +34,7 @@ export default function HomePage() {
                         src={IMAGES[1]}
                         alt="la reserva"
                         objectFit="cover"
-                        height="50%"
+                        height="600px"
                         width="100%"
                     />
                 </SwiperSlide>
@@ -51,7 +43,7 @@ export default function HomePage() {
                         src={IMAGES[2]}
                         alt="la reserva"
                         objectFit="cover"
-                        height="50%"
+                        height="600px"
                         width="100%"
                     />
                 </SwiperSlide>
