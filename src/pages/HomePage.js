@@ -21,10 +21,10 @@ export default function HomePage() {
                         <View height="100%">hi</View>
                     </View> */}
                     <Image
-                        src="./la-reserva-3.jpg"
+                        src={IMAGES[32]}
                         alt="la reserva"
                         objectFit="cover"
-                        height="50%"
+                        height="650px"
                         width="100%"
                     />
                     </SwiperSlide>
@@ -33,7 +33,7 @@ export default function HomePage() {
                         src={IMAGES[0]}
                         alt="la reserva"
                         objectFit="cover"
-                        height="50%"
+                        height="650px"
                         width="100%"
                     />
                 </SwiperSlide>
@@ -42,7 +42,7 @@ export default function HomePage() {
                         src={IMAGES[1]}
                         alt="la reserva"
                         objectFit="cover"
-                        height="50%"
+                        height="650px"
                         width="100%"
                     />
                 </SwiperSlide>
@@ -51,7 +51,7 @@ export default function HomePage() {
                         src={IMAGES[2]}
                         alt="la reserva"
                         objectFit="cover"
-                        height="50%"
+                        height="650px"
                         width="100%"
                     />
                 </SwiperSlide>

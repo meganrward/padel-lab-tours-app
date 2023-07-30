@@ -30,7 +30,8 @@ const IMAGES = [
     "./images/1C2A3702.jpg",
     "./images/1C2A3726.jpg",
     "./images/1C2A6142.jpeg",
-    "./images/La-Reserva-de-Sotogrande-Octubre-15-1.jpeg"
+    "./images/La-Reserva-de-Sotogrande-Octubre-15-1.jpeg",
+    "./images/COMING-SOON.png"
 ]
 
 export default IMAGES

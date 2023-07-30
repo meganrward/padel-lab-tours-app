@@ -53,7 +53,7 @@ const App = () => {
       <Flex justifyContent="center" padding="3%" fontSize="20px" alignContent="center" paddingRight="100px">        
         <Link href="/">
           <Image
-            src="./logo-with-name.png"
+            src="./logo-with-name-tours.png"
             alt="PADEL LAB TOURS logo"
             height="76px"
           />
@@ -62,7 +62,7 @@ const App = () => {
         <Link href="/">
           <Text paddingTop="26px">HOME</Text>
         </Link>
-        <Link href="/about">
+        {/* <Link href="/about">
           <Text paddingTop="26px">ABOUT</Text>
         </Link>
         <Link href="/locations">
@@ -70,16 +70,16 @@ const App = () => {
         </Link>
         <Link href="/meet-the-team">
           <Text paddingTop="26px">MEET THE TEAM</Text>
-        </Link>
+        </Link> */}
         <Link href="/register">
           <Text paddingTop="26px">REGISTER YOUR INTEREST</Text>
         </Link>
-        <Link href="/faq">
+        {/* <Link href="/faq">
           <Text paddingTop="26px">FAQ</Text>
         </Link>
         <Link href="/contact">
           <Text paddingTop="26px">CONTACT US</Text>
-        </Link>
+        </Link> */}
         <Link href="https://www.padellab.co.uk" isExternal={true}>
           <Text paddingTop="26px">SHOP</Text>
         </Link>
