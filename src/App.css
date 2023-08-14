@@ -22,12 +22,8 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: red;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
 @keyframes App-logo-spin {
   from {
@@ -41,4 +37,12 @@
 .navigation-bar {
   color: red;
   align-items: right;
+}
+
+.App-link {
+  justify-content: center;
+  font-size: 20px;
+  align-content: center;
+  font-weight:600;
+  color: #61dafb;
 }
