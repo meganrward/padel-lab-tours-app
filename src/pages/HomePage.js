@@ -5,58 +5,65 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import IMAGES from "./../helpers/images.js"
+import { CheckIsMobile } from "../helpers/helpers.js";
 
 export default function HomePage() {
+
+const isMobile = CheckIsMobile();
+
     return (
         <>
-        <View direction="column" gap="2rem" height="100%">
-         <Swiper navigation={true} pagination={true} modules={[Pagination, Navigation, Autoplay]} className="mySwiper" autoplay={{ delay: 2500, disableOnInteraction: false }}>
-                <SwiperSlide>
-                    {/* <View 
-                        style= {{backgroundImage: "url(./la-reserva-3.jpg)"}} 
-                        objectFit="scale-down"
-                        height="100%"
-                        width="100%"
-                    >
-                        <View height="100%">hi</View>
-                    </View> */}
-                    <Image
-                        src={IMAGES[32]}
-                        alt="la reserva"
-                        objectFit="cover"
-                        height="650px"
-                        width="100%"
-                    />
+        {isMobile ? (
+            <View>
+                <Image
+                   src={IMAGES[32]}
+                   alt="la reserva"
+                   objectFit="cover"
+                   width="100%"
+                />
+            </View>
+        ) : (
+            <View direction="column" gap="2rem" height="100%">
+            <Swiper navigation={true} pagination={true} modules={[Pagination, Navigation, Autoplay]} className="mySwiper" autoplay={{ delay: 2500, disableOnInteraction: false }}>
+                    <SwiperSlide>
+                        <Image
+                            src={IMAGES[32]}
+                            alt="la reserva"
+                            objectFit="cover"
+                            height="650px"
+                            width="100%"
+                        />
+                        </SwiperSlide>
+                    <SwiperSlide>
+                        <Image
+                            src={IMAGES[0]}
+                            alt="la reserva"
+                            objectFit="cover"
+                            height="650px"
+                            width="100%"
+                        />
                     </SwiperSlide>
-                <SwiperSlide>
-                    <Image
-                        src={IMAGES[0]}
-                        alt="la reserva"
-                        objectFit="cover"
-                        height="650px"
-                        width="100%"
-                    />
-                </SwiperSlide>
-                <SwiperSlide>     
-                    <Image
-                        src={IMAGES[1]}
-                        alt="la reserva"
-                        objectFit="cover"
-                        height="650px"
-                        width="100%"
-                    />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <Image
-                        src={IMAGES[2]}
-                        alt="la reserva"
-                        objectFit="cover"
-                        height="650px"
-                        width="100%"
-                    />
-                </SwiperSlide>
-            </Swiper>
-  </View>
+                    <SwiperSlide>     
+                        <Image
+                            src={IMAGES[1]}
+                            alt="la reserva"
+                            objectFit="cover"
+                            height="650px"
+                            width="100%"
+                        />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Image
+                            src={IMAGES[2]}
+                            alt="la reserva"
+                            objectFit="cover"
+                            height="650px"
+                            width="100%"
+                        />
+                    </SwiperSlide>
+                </Swiper>
+            </View>
+        )}
         </>
     )
 }
