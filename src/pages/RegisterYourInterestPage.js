@@ -52,7 +52,7 @@ export default function RegisterYourInterestPage() {
           >
           Thanks for registering your interest!
         </Alert> : null}
-          <Heading level={5}>Register your interest now to get £100 off your first trip!</Heading>
+          <Heading level={5}>Register your interest now & receive £100 off your next holiday!</Heading>
           <Flex direction="column" justifyContent="left" padding="0.4rem">
             <TextField
                 required 
@@ -118,7 +118,15 @@ export default function RegisterYourInterestPage() {
                   placeholder="234-567-8910"
             />
             <CheckboxField
-                label="Subscribe to marketing"
+                label={
+                  <Text>
+                    I would like to be kept up to date with Padel Lab events and receive marketing emails.
+                    <Text as="span" fontSize="0.8rem" color="red">
+                      {' '}
+                      (required)
+                    </Text>
+                  </Text>
+                }
                 name="subscribe"
                 value="yes"
             />
@@ -137,7 +145,7 @@ export default function RegisterYourInterestPage() {
               >
               Thanks for registering your interest!
             </Alert> : null}
-              <Heading level={5}>Register your interest now to get £100 off your first trip!</Heading>
+              <Heading level={5}>Register your interest now & receive £100 off your next holiday!</Heading>
               <Flex>
               <Flex direction="column" justifyContent="left" width="35rem" padding="0.4rem">
               <TextField
@@ -204,8 +212,16 @@ export default function RegisterYourInterestPage() {
                     placeholder="234-567-8910"
               />
               <CheckboxField
-                  label="Subscribe to marketing"
-                  name="subscribe"
+                  required
+                  label={
+                    <Text>
+                      I would like to be kept up to date with Padel Lab events and receive marketing emails.
+                      <Text as="span" fontSize="0.8rem" color="red">
+                        {' '}
+                        (required)
+                      </Text>
+                    </Text>
+                  }                  name="subscribe"
                   value="yes"
               />
               <Flex justifyContent="flex-end">

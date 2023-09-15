@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Image, Text, Flex } from "@aws-amplify/ui-react";
+import { View, Image, Text, Flex, Link } from "@aws-amplify/ui-react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -21,6 +21,9 @@ const isMobile = CheckIsMobile();
                    objectFit="cover"
                    width="100%"
                 />
+                <View margin="2rem" textAlign="center">
+                    <Link href="/register">Register your interest</Link> before 31st September & receive £100 off your next holiday!
+                </View>
             </View>
         ) : (
             <View direction="column" gap="2rem" height="100%">
