@@ -22,7 +22,7 @@ const isMobile = CheckIsMobile();
                    width="100%"
                 />
                 <View margin="2rem" textAlign="center">
-                    <Link href="/register">Register your interest</Link> before 31st September & receive £100 off your next holiday!
+                    <Link href="/register">Register your interest here</Link>
                 </View>
             </View>
         ) : (

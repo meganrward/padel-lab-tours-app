@@ -52,7 +52,7 @@ export default function RegisterYourInterestPage() {
           >
           Thanks for registering your interest!
         </Alert> : null}
-          <Heading level={5}>Register your interest now & receive £100 off your next holiday!</Heading>
+          <Heading level={5}>Register your interest now!</Heading>
           <Flex direction="column" justifyContent="left" padding="0.4rem">
             <TextField
                 required 
@@ -145,7 +145,7 @@ export default function RegisterYourInterestPage() {
               >
               Thanks for registering your interest!
             </Alert> : null}
-              <Heading level={5}>Register your interest now & receive £100 off your next holiday!</Heading>
+              <Heading level={5}>Register your interest now!</Heading>
               <Flex>
               <Flex direction="column" justifyContent="left" width="35rem" padding="0.4rem">
               <TextField
