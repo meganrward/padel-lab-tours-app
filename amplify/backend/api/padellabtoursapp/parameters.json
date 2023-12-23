@@ -2,5 +2,6 @@
   "AppSyncApiName": "padellabtoursapp",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
   "DynamoDBEnableServerSideEncryption": false,
-  "AuthModeLastUpdated": "2023-06-22T15:28:17.385Z"
+  "AuthModeLastUpdated": "2023-12-23T19:22:20.626Z",
+  "APIKeyExpirationEpoch": "-1"
 }

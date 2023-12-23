@@ -79,21 +79,11 @@ export const getCustomer = /* GraphQL */ `
       email
       mobile_number
       Bookings {
-        items {
-          id
-          first_name
-          last_name
-          has_paid
-          customerID
-          tour_id
-          createdAt
-          updatedAt
-          __typename
-        }
         nextToken
         __typename
       }
       subscribed_to_marketing
+      Rating
       createdAt
       updatedAt
       __typename
@@ -113,11 +103,8 @@ export const listCustomers = /* GraphQL */ `
         last_name
         email
         mobile_number
-        Bookings {
-          nextToken
-          __typename
-        }
         subscribed_to_marketing
+        Rating
         createdAt
         updatedAt
         __typename

@@ -55,21 +55,11 @@ export const onCreateCustomer = /* GraphQL */ `
       email
       mobile_number
       Bookings {
-        items {
-          id
-          first_name
-          last_name
-          has_paid
-          customerID
-          tour_id
-          createdAt
-          updatedAt
-          __typename
-        }
         nextToken
         __typename
       }
       subscribed_to_marketing
+      Rating
       createdAt
       updatedAt
       __typename
@@ -85,21 +75,11 @@ export const onUpdateCustomer = /* GraphQL */ `
       email
       mobile_number
       Bookings {
-        items {
-          id
-          first_name
-          last_name
-          has_paid
-          customerID
-          tour_id
-          createdAt
-          updatedAt
-          __typename
-        }
         nextToken
         __typename
       }
       subscribed_to_marketing
+      Rating
       createdAt
       updatedAt
       __typename
@@ -115,21 +95,11 @@ export const onDeleteCustomer = /* GraphQL */ `
       email
       mobile_number
       Bookings {
-        items {
-          id
-          first_name
-          last_name
-          has_paid
-          customerID
-          tour_id
-          createdAt
-          updatedAt
-          __typename
-        }
         nextToken
         __typename
       }
       subscribed_to_marketing
+      Rating
       createdAt
       updatedAt
       __typename
